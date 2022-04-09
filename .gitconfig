@@ -10,3 +10,4 @@
         pu = push
         to-main = "!git checkout main; git pull; git checkout -; git rebase main"
         to-master = "!git checkout master; git pull; git checkout -; git rebase master"
+        nevermind = "!git reset --hard HEAD && git clean -d --force"
