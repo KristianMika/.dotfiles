@@ -1,0 +1,12 @@
+[commit]
+	gpgsign = true
+[core]
+	editor = vim
+[alias]
+        st = status
+        ci = commit
+        co = checkout
+        br = branch
+        pu = push
+        to-main = "!git checkout main; git pull; git checkout -; git rebase main"
+        to-master = "!git checkout master; git pull; git checkout -; git rebase master"
