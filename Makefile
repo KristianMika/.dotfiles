@@ -1,5 +1,5 @@
 .PHONY: all
-all: git vim
+all: git vim clang-format tmux
 
 guard-%:
 # checks if an environment variable is set - fails if it is not
@@ -18,3 +18,6 @@ vim:
 
 clang-format:
 	cp --interactive .clang-format ~/.clang-format
+
+tmux:
+	cp --interactive .tmux.conf ~/.tmux.conf
