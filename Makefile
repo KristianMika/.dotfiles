@@ -25,4 +25,6 @@ tmux:
 zsh: guard-DEBEMAIL guard-DEBFULLNAME
 	envsubst '$${DEBEMAIL},$${DEBFULLNAME}' < .zshrc.in > .zshrc
 	mv --interactive .zshrc ~/.zshrc
+	mkdir -p "~/.zsh"
 	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+	git clone https://github.com/sindresorhus/pure.git "~/.zsh/pure"
