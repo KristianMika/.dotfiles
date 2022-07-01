@@ -1,5 +1,5 @@
 .PHONY: all
-all: git vim clang-format tmux
+all: git vim clang-format tmux zsh
 
 guard-%:
 # checks if an environment variable is set - fails if it is not
@@ -21,3 +21,8 @@ clang-format:
 
 tmux:
 	cp --interactive .tmux.conf ~/.tmux.conf
+
+zsh: guard-DEBEMAIL guard-DEBFULLNAME
+	envsubst '$${DEBEMAIL},$${DEBFULLNAME}' < .zshrc.in > .zshrc
+	mv --interactive .zshrc ~/.zshrc
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
