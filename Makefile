@@ -1,3 +1,6 @@
+.PHONY: all
+all: git vim
+
 guard-%:
 # checks if an environment variable is set - fails if it is not
 # usage: guard-VARIABLE
@@ -9,3 +12,9 @@ guard-%:
 git: guard-GIT_EMAIL guard-GIT_NAME guard-GIT_SIGNKEY
 	envsubst < .gitconfig.in > .gitconfig
 	mv --interactive .gitconfig ~/.gitconfig
+
+vim:
+	cp --interactive .vimrc ~/.vimrc
+
+clang-format:
+	cp --interactive .clang-format ~/.clang-format
