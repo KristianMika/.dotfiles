@@ -1,3 +1,7 @@
+[user]
+        email = ${GIT_EMAIL}
+        name = ${GIT_NAME}
+        signingkey = ${GIT_SIGNKEY}
 [commit]
 	gpgsign = true
 [core]
