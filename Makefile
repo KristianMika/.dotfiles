@@ -1,5 +1,5 @@
 .PHONY: all
-all: git vim clang-format tmux zsh
+all: git vim clang-format tmux zsh vscode
 
 guard-%:
 # checks if an environment variable is set - fails if it is not
@@ -28,3 +28,9 @@ zsh: guard-DEBEMAIL guard-DEBFULLNAME
 	mkdir -p "~/.zsh"
 	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 	git clone https://github.com/sindresorhus/pure.git "~/.zsh/pure"
+
+vscode:
+	`cat vscode-extensions.txt | xargs -L 1 echo code --install-extension`
+
+clean:
+	rm -f .zshrc .gitconfig
